@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Temps",
-  description: "Weather API playground",
+  description: "openmeteo API playground",
 };
 
 export default function RootLayout({

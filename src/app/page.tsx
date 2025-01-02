@@ -107,7 +107,7 @@ export default function Home() {
             {submittedStates && <WeatherChart checkboxStates={submittedStates.checkboxStates} dateStates={submittedStates.dateStates} />}
           </main>
           <footer className="flex gap-6 items-center justify-center">
-            <p>Isti</p>
+            <p>Isti - openmeteo API playground</p>
           </footer>
         </div>
       </div>

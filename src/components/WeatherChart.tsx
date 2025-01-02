@@ -77,8 +77,8 @@ function WeatherChart({ checkboxStates, dateStates }: WeatherChartProps) {
       name: 'First set',
       line: {
         shape: 'spline', // Use 'spline' for smoothing
-        smoothing: 1.3,  // Adjust the smoothing level (1-2 recommended)
-        width: 2
+        //smoothing: 1.3,  // Adjust the smoothing level (1-2 recommended)
+        //width: 2
       },
     },
     {
@@ -88,8 +88,8 @@ function WeatherChart({ checkboxStates, dateStates }: WeatherChartProps) {
       name: 'Second set',
       xaxis: 'x2',
       line: {
-        shape: 'spline', // Use 'spline' for smoothing
-        smoothing: 1.3,  // Adjust the smoothing level (1-2 recommended)
+        //shape: 'spline', // Use 'spline' for smoothing
+        //smoothing: 1.3,  // Adjust the smoothing level (1-2 recommended)
         width: 2
       },
     },
