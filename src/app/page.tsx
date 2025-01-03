@@ -10,13 +10,16 @@ export default function Home() {
     temperature_2m_min: false,
     temperature_2m_mean: false,
     temperature_2m_max: false,
+    daylight_duration: false,
+    sunshine_duration: false,
+    precipitation_hours: false,
   });
 
   const [dateStates, setDateStates] = useState<{ [key: string]: string }>({
-    firstStart: '',
-    firstEnd: '',
-    secondStart: '',
-    secondEnd: ''
+    firstStart: '2023-01-01',
+    firstEnd: '2023-02-01',
+    secondStart: '2024-01-01',
+    secondEnd: '2024-02-01'
   });
 
   const [submittedStates, setSubmittedStates] = useState<{
@@ -26,15 +29,7 @@ export default function Home() {
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
-
-    setCheckboxStates((prev) => {
-      const updatedStates = Object.keys(prev).reduce(
-        (acc, key) => ({ ...acc, [key]: false }),
-        {}
-      );
-
-      return { ...updatedStates, [name]: checked };
-    });
+    setCheckboxStates((prev) => ({ ...prev, [name]: checked }));
   };
 
   const handleDateInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,7 +66,7 @@ export default function Home() {
       <div className="bg-white shadow-md rounded-lg p-6 mb-6 w-full max-w-sm">
         <h1 className="text-2xl font-bold mb-4 text-center">Weather Data Selection</h1>
         <div className="flex flex-col mb-4">
-          <label className="mb-2">
+        <label className="mb-2">
             <input type="checkbox" name="temperature_2m_min" checked={checkboxStates.temperature_2m_min} onChange={handleCheckboxChange} /> temperature_2m_min
           </label>
           <label className="mb-2">
@@ -79,6 +74,15 @@ export default function Home() {
           </label>
           <label className="mb-2">
             <input type="checkbox" name="temperature_2m_max" checked={checkboxStates.temperature_2m_max} onChange={handleCheckboxChange} /> temperature_2m_max
+          </label>
+          <label className="mb-2">
+            <input type="checkbox" name="daylight_duration" checked={checkboxStates.daylight_duration} onChange={handleCheckboxChange} /> daylight_duration
+          </label>
+          <label className="mb-2">
+            <input type="checkbox" name="sunshine_duration" checked={checkboxStates.sunshine_duration} onChange={handleCheckboxChange} /> sunshine_duration
+          </label>
+          <label className="mb-2">
+            <input type="checkbox" name="precipitation_hours" checked={checkboxStates.precipitation_hours} onChange={handleCheckboxChange} /> precipitation_hours
           </label>
         </div>
         <div className="bg-gray-200 p-4 rounded-lg mb-4">
